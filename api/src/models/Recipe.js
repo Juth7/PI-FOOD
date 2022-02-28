@@ -14,25 +14,26 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    name: {
-      type: DataTypes.STRING,
+    summary: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    score: {
+      type: DataTypes.FLOAT,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    healthScore: {
+      type: DataTypes.FLOAT,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    instructions: {
+      type: DataTypes.TEXT,
     },
-    name: {
+    image: {
       type: DataTypes.STRING,
+    },
+    createdByUser: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: true,
     },
   });
 };
