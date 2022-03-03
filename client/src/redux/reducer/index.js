@@ -38,7 +38,7 @@ const rootReducer = (state = initialState, action) => {
       const allDiets = state.allRecipes;
       const filterTypes =
         action.payload === "all"
-          ? allTypes
+          ? allDiets
           : allDiets.filter((r) => r.diet.includes(action.payload));
       return {
         ...state,
@@ -60,7 +60,16 @@ const rootReducer = (state = initialState, action) => {
         showedRecipes: orderName,
       };
     case "ORDER_BY_SCORE":
-      return;
+      const orderScore =
+        action.payload === "all"
+          ? state.allRecipes
+          : action.payload === "high"
+          ? state.showedRecipes.sort((a, b) => b.score - a.score)
+          : state.showedRecipes.sort((a, b) => a.score - b.score);
+      return {
+        ...state,
+        showedRecipes: orderScore,
+      };
 
     default:
       return { ...state };

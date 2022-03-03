@@ -1,6 +1,7 @@
-const axios = require("axios");
-const { Router } = require("express");
+require("dotenv").config();
 const { YOUR_API_KEY } = process.env;
+const { Router } = require("express");
+const axios = require("axios");
 const { Recipe, Diet } = require("../db");
 
 const router = Router();
@@ -12,10 +13,11 @@ const router = Router();
 const apiRecipes = async () => {
   try {
     const json = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=5`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=12`
     );
     const recipe = json.data.results?.map((r) => {
       return {
+        id: r.id,
         image: r.image,
         name: r.title,
         diet: r.diets,
@@ -42,6 +44,7 @@ const dbRecipes = async () => {
       },
     });
     const findRecipe = db.map((n) => ({
+      id: n.id,
       image: n.image,
       name: n.name,
       diet: n.diets.map((d) => d.name),
@@ -59,7 +62,7 @@ const allRecipes = async () => {
   try {
     const api = await apiRecipes();
     const db = await dbRecipes();
-    const all = api.concat(db);
+    const all = [...api, ...db];
     return all;
   } catch (error) {
     console.log(error);
@@ -75,6 +78,7 @@ const apiName = async (name) => {
       .then((res) => {
         const names = res.data.results.map((r) => {
           return {
+            id: r.id,
             image: r.image,
             name: r.title,
             diet: r.diets,
@@ -104,6 +108,7 @@ const dbName = async (name) => {
       },
     });
     const dbNames = names.map((n) => ({
+      id: n.id,
       image: n.image,
       name: n.name,
       diet: n.diets.map((d) => d.name),
@@ -152,6 +157,7 @@ const apiId = async (id) => {
     );
     const detail = api.data;
     return {
+      id: id,
       image: detail.image,
       name: detail.title,
       diet: detail.diets,
@@ -175,6 +181,7 @@ const dbId = async (id) => {
       },
     });
     return {
+      id: id,
       image: idDb.image,
       name: idDb.name,
       score: idDb.score,
@@ -210,7 +217,7 @@ router.get("/:id", async (req, res) => {
     if (ids) {
       return res.send(ids);
     } else {
-      return res.status(404).json({ msg: "Recipe Not Found" });
+      return res.status(404).json({ msg: "ID Not Found" });
     }
   } catch (error) {
     console.log(error);
