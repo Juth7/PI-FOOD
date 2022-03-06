@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
     } = req.body;
     const newRecipe = await Recipe.create({
       name,
-      image,
+      image: image || "../../client/src/img/404.png",
       summary,
       score,
       healthScore,

@@ -1,0 +1,32 @@
+html body {
+  background: url("../../img/backgroung.jpg") no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+}
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.loader {
+  margin-left: 25rem;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5rem;
+}
+.notFound {
+}
+.filters {
+}
+.form {
+}
+.search {
+}
+.btnForm {
+}
+.select {
+}
+.btnCreate {
+}

@@ -77,7 +77,7 @@ export const createRecipe = (payload) => {
   };
 };
 
-export const deteteRecipe = (id) => {
+export const deleteRecipe = (id) => {
   return async (dispatch) => {
     try {
       const json = await axios.delete(
@@ -87,13 +87,6 @@ export const deteteRecipe = (id) => {
     } catch (error) {
       console.log(error);
     }
-  };
-};
-
-export const cleanRecipes = () => {
-  return {
-    type: "GET_RECIPES",
-    payload: [],
   };
 };
 

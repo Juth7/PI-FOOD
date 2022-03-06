@@ -13,7 +13,7 @@ const router = Router();
 const apiRecipes = async () => {
   try {
     const json = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=12`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=5`
     );
     const recipe = json.data.results?.map((r) => {
       return {

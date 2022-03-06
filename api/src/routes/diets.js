@@ -5,6 +5,10 @@ const router = Router();
 
 const dietTypes = async () => {
   try {
+    const prediets = await Diet.findAll();
+    if (prediets.length) {
+      return prediets;
+    }
     const types = [
       "gluten free",
       "dairy free",
