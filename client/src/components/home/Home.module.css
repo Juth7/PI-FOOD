@@ -1,5 +1,5 @@
 html body {
-  background: url("../../img/backgroung.jpg") no-repeat center center fixed;
+  background: url("../../img/background1.jpg") no-repeat center center fixed;
   background-size: cover;
   width: 100%;
 }
@@ -7,26 +7,94 @@ html body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 0rem 3rem;
 }
 .loader {
-  margin-left: 25rem;
+  margin-left: 20rem;
+  margin-top: auto;
+  width: 1000rem;
 }
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0.5rem;
 }
-.notFound {
-}
 .filters {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  background: url("../../img/table1.png") no-repeat center center;
+  background-size: contain;
+  width: 35rem;
+  height: 50rem;
 }
-.form {
+.btnReload {
+  margin-top: 5rem;
+  margin-left: -25rem;
+  width: fit-content;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 0.5rem rgba(24, 22, 22, 0.678);
+  background: linear-gradient(180deg, #c0b093 0%, rgba(196, 196, 196, 0) 100%);
+  padding: 0.3rem 0.4rem;
+  border: none;
 }
 .search {
+  background-color: rgba(224, 208, 193, 0.192);
+  border: 2px solid #553a17;
+  border-radius: 10px 0px 0px 10px;
+  width: 18rem;
+  height: 2.5rem;
+  margin: 5rem 0 2rem 0;
 }
-.btnForm {
+.search::placeholder {
+  color: rgba(247, 235, 210, 0.897);
+  text-shadow: 0 0 0.25rem rgb(19, 18, 18);
+}
+.btnSearch {
+  background: linear-gradient(
+    180deg,
+    rgb(216, 122, 46) 0%,
+    rgba(136, 50, 4, 0.973) 100%
+  );
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+  height: 2.5rem;
+  width: 5rem;
+  color: rgb(248, 224, 171);
+  cursor: pointer;
 }
 .select {
+  margin-top: 2rem;
+  color: rgba(231, 227, 216, 0.747);
+  text-shadow: 0 0 1px rgba(235, 185, 169, 0.479);
+  width: 12rem;
+  height: 2.2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(150, 82, 26, 0.83) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border: 2px solid rgba(119, 89, 25, 0.6);
+  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding-left: 15px;
+}
+.select option {
+  background-color: #703711c7;
 }
 .btnCreate {
+  margin-top: 5.5rem;
+  color: #eed9b9;
+  text-shadow: 0 0 0.2rem#805a2e;
+  font-size: 15px;
+  width: fit-content;
+  padding: 0.8rem;
+  background: linear-gradient(rgb(192, 123, 58) 0%, rgb(165, 65, 7) 100%);
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 4rem;
+  cursor: pointer;
 }

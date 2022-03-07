@@ -10,6 +10,7 @@ export default function RecipeDetail() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const {
+    createdByUser,
     image,
     name,
     diet,
@@ -17,7 +18,6 @@ export default function RecipeDetail() {
     score,
     healthScore,
     instructions,
-    createdByUser,
   } = useSelector((state) => state.detail);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function RecipeDetail() {
           className={s.img}
         />
         <div className={s.summary}>
-          <p dangerouslySetInnerHTML={{ __html: `${summary}` }} />
+          <p>{summary && summary.replace(/<[^>]+>/g, "")}</p>
         </div>
         <div className={s.types}>
           {diet?.map((d) => (
@@ -60,19 +60,12 @@ export default function RecipeDetail() {
           ))}
         </div>
         <div className={s.scores}>
-          <div id="score">
-            {" "}
+          <span id="score">
             Score:{" "}
-            <progress
-              id="score"
-              max="100"
-              value={score}
-              className={s.score}
-            />{" "}
+            <progress id="score" max="100" value={score} className={s.score} />{" "}
             {score}/100
-          </div>
-          <div id="healthScore">
-            {" "}
+          </span>
+          <span id="healthScore">
             Health Level:{" "}
             <progress
               id="healthScore"
@@ -81,10 +74,12 @@ export default function RecipeDetail() {
               className={s.score}
             />{" "}
             {healthScore}/100
-          </div>
+          </span>
         </div>
         <div className={s.instructions}>
-          <p dangerouslySetInnerHTML={{ __html: `${instructions}` }} />
+          {instructions && (
+            <p>{instructions && instructions.replace(/<[^>]+>/g, "")}</p>
+          )}
         </div>
         {createdByUser && (
           <button className={s.btnDelete} onClick={handleDelete}>

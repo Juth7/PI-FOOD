@@ -1,8 +1,35 @@
 .card {
+  padding: 2rem 0.5rem 0.5rem 0.5rem;
+  width: 12rem;
+  height: 13rem;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgb(235, 198, 144) 0%,
+    rgba(134, 52, 8, 0.8) 100%
+  );
+  box-shadow: 0px 0px 8px 2px rgba(63, 18, 15, 0.774);
+  border: 1px solid rgba(0, 0, 0, 0.8);
 }
-.img {
+.link {
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: small;
 }
 .name {
+  margin: 0.45rem;
+}
+.img {
+  box-shadow: 0px 0px 8px 2px rgba(63, 18, 15, 0.774);
+  border-radius: 0.5rem;
 }
 .types {
+  display: inline-block;
+  margin: 0.05rem 0.2rem 0.05rem 0.2rem;
+  font-size: smaller;
+  padding: 0.1rem;
+  border: 1.5px solid rgb(129, 79, 13);
+  border-radius: 15px;
+  background-color: rgba(221, 135, 96, 0.459);
+  width: fit-content;
 }

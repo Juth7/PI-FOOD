@@ -1,18 +1,83 @@
 .content {
+  border: 1px solid rgb(161, 91, 58);
+  border-radius: 2rem;
+  margin: 3rem auto;
+  padding-bottom: 3rem;
+  width: 45rem;
+  color: #703008ea;
+  background: rgba(220, 192, 176, 0.55);
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3rem);
 }
 .title {
+  margin-top: 5rem;
+  text-shadow: 0 0 0.3rem rgba(209, 156, 106, 0.842);
 }
 .img {
+  margin-top: 1.5rem;
+  box-shadow: 0px 0px 15px 3px rgba(49, 46, 46, 0.774);
+  border-radius: 1rem;
 }
 .summary {
+  padding: 0 4rem;
+  text-align: justify;
 }
 .types {
+  margin: 0 3rem;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.instructions {
+  padding: 0 4rem;
+  text-align: justify;
+}
+
+.btnDelete {
+  margin: 4rem 2rem 0 2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(252, 136, 82, 0.32) 18.57%,
+    rgba(107, 89, 25, 0.103) 100%
+  );
+  border-color: rgba(151, 90, 34, 0.589);
+  box-shadow: 0px 0px 20px 4px rgba(95, 20, 20, 0.5);
+  border-radius: 20px;
+  color: rgba(255, 235, 205, 0.616);
+  width: fit-content;
+  padding: 0.25rem 1rem;
 }
 .scores {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 3.5rem;
 }
 .score {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Añado mis propios estilos */
+  width: 6.5rem;
+  height: 1rem;
+  overflow: hidden;
+  border: solid 1px rgb(124, 150, 95);
+  border-radius: 20px;
 }
-.instructions {
+
+.score::-webkit-progress-bar {
+  background: linear-gradient(
+    90deg,
+    rgb(248, 17, 29) 0%,
+    rgb(252, 252, 73) 50%,
+    rgb(39, 236, 39) 100%
+  );
 }
-.btnDelete {
+
+.score::-webkit-progress-value {
+  background-color: rgba(228, 222, 222, 0.171);
+  backdrop-filter: blur(2rem);
+  box-shadow: 0 0 0.5rem rgb(8, 8, 8);
+  border-radius: 4rem;
 }

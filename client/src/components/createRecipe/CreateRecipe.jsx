@@ -108,7 +108,7 @@ export default function CreateRecipe() {
     <div>
       <NavBar />
       <form onSubmit={handleSubmit} className={s.form}>
-        <div>
+        <div className={s.display}>
           <label htmlFor="image">Image: </label>
           <input
             type="url"
@@ -116,12 +116,11 @@ export default function CreateRecipe() {
             value={input.image}
             autoComplete="off"
             onChange={handleChange}
-            placeholder=" URL Image...(Optional)"
+            placeholder=" URL Image (Optional)..."
             className={s.input}
           />
         </div>
-        <br />
-        <div>
+        <div className={s.display}>
           <label htmlFor="name">Title: </label>
           <input
             type="text"
@@ -133,19 +132,19 @@ export default function CreateRecipe() {
           />
           {errors.name && <p className={s.errors}>{errors.name}</p>}
         </div>
-        <div>
+        <div className={s.display}>
           <label htmlFor="summary">Summary: </label>
-          <input
+          <textarea
             type="textarea"
             name="summary"
             value={input.summary}
-            autoComplete="off"
             onChange={handleChange}
-            className={s.input}
+            autoComplete="off"
+            className={s.textarea}
           />
           {errors.summary && <p className={s.errors}>{errors.summary}</p>}
         </div>
-        <div>
+        <div className={s.display}>
           <label htmlFor="score">Score: </label>
           <input
             type="number"
@@ -159,7 +158,7 @@ export default function CreateRecipe() {
           />
           {errors.score && <p className={s.errors}>{errors.score}</p>}
         </div>
-        <div>
+        <div className={s.display}>
           <label htmlFor="healthScore">Health Level: </label>
           <input
             type="number"
@@ -175,21 +174,21 @@ export default function CreateRecipe() {
             <p className={s.errors}>{errors.healthScore}</p>
           )}
         </div>
-        <div>
-          <label htmlFor="instructions">Instructions: </label>
-          <input
+        <div className={s.display}>
+          <label htmlFor="instructions">Instructions: </label>{" "}
+          <textarea
             type="textarea"
             name="instructions"
             value={input.instructions}
             autoComplete="off"
             onChange={handleChange}
-            className={s.input}
+            className={s.textarea}
           />
           {errors.instructions && (
             <p className={s.errors}>{errors.instructions}</p>
           )}
         </div>
-        <div>
+        <div className={s.checkbox}>
           <label>Diets: </label> <br />
           {diets.map((d) => (
             <label htmlFor={d.name} key={d.name}>
@@ -198,7 +197,6 @@ export default function CreateRecipe() {
                 name={d.name}
                 value={d.name}
                 onChange={handleCheck}
-                className={s.check}
               />
               {d.name}
             </label>

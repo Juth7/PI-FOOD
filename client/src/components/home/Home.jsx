@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 import NavBar from "../navBar/NavBar";
 import s from "./Home.module.css";
 import loader from "../../img/loader.gif";
-import icon from "../../img/refresh.png";
+import icon from "../../img/refresh.jpg";
 import notFound from "../../img/notFound.png";
 import Pagination from "../pagination/Pagination";
 import RecipeCard from "../recipeCard/RecipeCard";
-// import Loader from "../../img/Charizard.gif";
 import {
   getRecipes,
   getRecipeName,
@@ -30,7 +29,7 @@ export default function Home() {
   const recipesPerPage = 9;
   const end = page * recipesPerPage; //index of the last recipe
   const start = end - recipesPerPage; //index of the first recipe
-  const currentRecipes = recipes?.slice(start, end); //rango de pokemones en que estamos
+  const currentRecipes = recipes?.slice(start, end); //rango de recetas en que estamos
   // console.log("current", currentRecipes);
 
   const pagination = (n) => {
@@ -96,22 +95,22 @@ export default function Home() {
           </div>
         ) : (
           <div className={s.notFound}>
-            <img src={notFound} alt="Recipe Not Found" width="800px" />
+            <img src={notFound} alt="Recipe Not Found" width="900px" />
           </div>
         )}
         <div className={s.filters}>
           <button className={s.btnReload} onClick={handleClick}>
-            <img src={icon} alt="Reload" width="20px" />
+            <img src={icon} alt="Reload" width="30px" />
           </button>
-          <div className={s.form}>
+          <div>
             <form onClick={handleSubmit}>
               <input
                 className={s.search}
                 type="search"
-                placeholder="Search..."
+                placeholder="  Write a name here..."
                 onChange={handleInput}
               />
-              <button type="submit" className={s.btnForm}>
+              <button type="submit" className={s.btnSearch}>
                 Search
               </button>
             </form>
@@ -136,7 +135,7 @@ export default function Home() {
             <option value="low">Lowest Score</option>
           </select>
           <Link to="/create">
-            <button className={s.btnCreate}>New Recipe</button>
+            <button className={s.btnCreate}>Create Your Recipe!</button>
           </Link>
         </div>
       </div>
