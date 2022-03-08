@@ -46,6 +46,9 @@ html body {
   width: 18rem;
   height: 2.5rem;
   margin: 5rem 0 2rem 0;
+  color: rgb(248, 231, 209);
+  font-size: 0.95rem;
+  padding-left: 0.7rem;
 }
 .search::placeholder {
   color: rgba(247, 235, 210, 0.897);

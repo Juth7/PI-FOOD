@@ -106,7 +106,7 @@ export default function Home() {
             <form onClick={handleSubmit}>
               <input
                 className={s.search}
-                type="search"
+                type="text"
                 placeholder="  Write a name here..."
                 onChange={handleInput}
               />

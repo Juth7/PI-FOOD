@@ -87,7 +87,9 @@ const apiName = async (name) => {
           };
         });
         // console.log("namesss", names);
-        return names.filter((n) => n.name.includes(name));
+        return names.filter((n) =>
+          n.name.toLowerCase().includes(name.toLowerCase())
+        );
       });
   } catch (error) {
     console.log(error);

@@ -1,8 +1,6 @@
 const initialState = {
   allRecipes: [],
   showedRecipes: [],
-  orderN: [],
-  orderS: [],
   diets: [],
   detail: [],
   isLoading: true,
@@ -13,8 +11,6 @@ const rootReducer = (state = initialState, action) => {
     case "GET_RECIPES":
       return {
         ...state,
-        orderS: action.payload,
-        orderN: action.payload,
         showedRecipes: action.payload,
         allRecipes: action.payload,
         isLoading: action.loading,
@@ -51,12 +47,12 @@ const rootReducer = (state = initialState, action) => {
     case "ORDER_BY_NAME":
       const orderName =
         action.payload === "all"
-          ? state.orderN
+          ? state.allRecipes
           : action.payload === "asc"
-          ? state.orderN.sort((a, b) => {
+          ? state.showedRecipes.sort((a, b) => {
               return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
             })
-          : state.orderN.sort((a, b) => {
+          : state.showedRecipes.sort((a, b) => {
               return b.name.toLowerCase().localeCompare(a.name.toLowerCase());
             });
       return {
@@ -68,8 +64,8 @@ const rootReducer = (state = initialState, action) => {
         action.payload === "all"
           ? state.allRecipes
           : action.payload === "high"
-          ? state.orderS.sort((a, b) => b.score - a.score)
-          : state.orderS.sort((a, b) => a.score - b.score);
+          ? state.showedRecipes.sort((a, b) => b.score - a.score)
+          : state.showedRecipes.sort((a, b) => a.score - b.score);
       return {
         ...state,
         showedRecipes: orderScore,

@@ -1,7 +1,7 @@
 .card {
   padding: 2rem 0.5rem 0.5rem 0.5rem;
-  width: 12rem;
-  height: 13rem;
+  width: 14rem;
+  height: 15rem;
   border-radius: 20px;
   background: linear-gradient(
     180deg,
@@ -27,8 +27,8 @@
   display: inline-block;
   margin: 0.05rem 0.2rem 0.05rem 0.2rem;
   font-size: smaller;
-  padding: 0.1rem;
-  border: 1.5px solid rgb(129, 79, 13);
+  padding: 0.1rem 0.3rem;
+  border: 1.5px solid rgb(194, 141, 71);
   border-radius: 15px;
   background-color: rgba(221, 135, 96, 0.459);
   width: fit-content;
