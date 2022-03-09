@@ -11,13 +11,14 @@ html body {
 }
 .loader {
   margin-left: 20rem;
-  margin-top: auto;
-  width: 1000rem;
+  margin-top: -5rem;
+  width: 120%;
 }
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.5rem;
+  grid-gap: 1rem;
+  margin-top: 2rem;
 }
 .filters {
   display: flex;
@@ -38,6 +39,7 @@ html body {
   background: linear-gradient(180deg, #c0b093 0%, rgba(196, 196, 196, 0) 100%);
   padding: 0.3rem 0.4rem;
   border: none;
+  cursor: pointer;
 }
 .search {
   background-color: rgba(224, 208, 193, 0.192);
@@ -62,7 +64,7 @@ html body {
   );
   border: none;
   border-radius: 0px 10px 10px 0px;
-  height: 2.5rem;
+  height: 2.9rem;
   width: 5rem;
   color: rgb(248, 224, 171);
   cursor: pointer;
@@ -83,6 +85,7 @@ html body {
   backdrop-filter: blur(5px);
   border-radius: 15px;
   padding-left: 15px;
+  cursor: pointer;
 }
 .select option {
   background-color: #703711c7;
@@ -100,4 +103,7 @@ html body {
   border: none;
   border-radius: 4rem;
   cursor: pointer;
+}
+.btnCreate:hover {
+  transform: scale(1.02, 1.02);
 }

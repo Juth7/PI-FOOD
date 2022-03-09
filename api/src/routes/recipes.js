@@ -13,7 +13,7 @@ const router = Router();
 const apiRecipes = async () => {
   try {
     const json = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=9`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&addRecipeInformation=true&number=100`
     );
     const recipe = json.data.results?.map((r) => {
       return {
@@ -97,7 +97,7 @@ const apiName = async (name) => {
 };
 
 const dbName = async (name) => {
-  console.log("pato", name);
+  // console.log("pato", name);
   try {
     const names = await Recipe.findAll({
       where: { name: name },
@@ -221,20 +221,6 @@ router.get("/:id", async (req, res) => {
     } else {
       return res.status(404).json({ msg: "ID Not Found" });
     }
-  } catch (error) {
-    console.log(error);
-  }
-});
-
-router.delete("/delete/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    if (id) {
-      await Recipe.destroy({
-        where: { id: id },
-      });
-    }
-    return res.status(200).json({ msg: "Recipe deleted successfully!" });
   } catch (error) {
     console.log(error);
   }

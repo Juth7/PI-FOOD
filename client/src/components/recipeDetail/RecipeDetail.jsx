@@ -28,18 +28,6 @@ export default function RecipeDetail() {
     };
   }, [id, dispatch]);
 
-  const handleDelete = (e) => {
-    e.preventDefault();
-    const confirmation = window.confirm(
-      "Are you sure you want to delete your recipe?"
-    );
-    if (confirmation) {
-      dispatch(deleteRecipe(id));
-      alert("Recipe Deleted Successfully");
-      navigate("/home");
-    }
-  };
-
   return (
     <div>
       <NavBar />
@@ -81,11 +69,6 @@ export default function RecipeDetail() {
             <p>{instructions && instructions.replace(/<[^>]+>/g, "")}</p>
           )}
         </div>
-        {createdByUser && (
-          <button className={s.btnDelete} onClick={handleDelete}>
-            Delete
-          </button>
-        )}
       </div>
     </div>
   );

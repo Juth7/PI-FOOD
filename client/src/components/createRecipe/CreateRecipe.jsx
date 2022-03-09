@@ -65,9 +65,8 @@ export default function CreateRecipe() {
     if (!input.summary.length) {
       errors.summary = "This field cannot be empty";
     }
-    if (input.summary.length < 40 || input.summary.length > 80) {
-      errors.summary =
-        "This field must be at least 40 characters and no longer than 80 characters";
+    if (input.summary.length < 40) {
+      errors.summary = "This field must be at least 40 characters";
     }
     if (input.score < 1 || input.score > 100) {
       errors.score = "Number required. Must be a number between 1-100";

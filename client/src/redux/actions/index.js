@@ -77,19 +77,6 @@ export const createRecipe = (payload) => {
   };
 };
 
-export const deleteRecipe = (id) => {
-  return async (dispatch) => {
-    try {
-      const json = await axios.delete(
-        `http://localhost:3001/recipes/delete/${id}`
-      );
-      return dispatch({ type: "DELETE_RECIPE", payload: json.data });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-};
-
 export const cleanDetail = () => {
   return {
     type: "GET_DETAILS",

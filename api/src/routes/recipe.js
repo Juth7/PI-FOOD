@@ -18,7 +18,9 @@ router.post("/", async (req, res) => {
     } = req.body;
     const newRecipe = await Recipe.create({
       name,
-      image: image || "../../client/src/img/404.png",
+      image:
+        image ||
+        "https://p4.wallpaperbetter.com/wallpaper/314/740/853/vegetables-fork-spoon-plate-wallpaper-preview.jpg",
       summary,
       score,
       healthScore,

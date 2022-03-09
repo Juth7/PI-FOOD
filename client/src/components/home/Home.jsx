@@ -25,7 +25,6 @@ export default function Home() {
   const [name, setName] = useState("");
   const [order, setOrder] = useState("");
   const [page, setPage] = useState(1);
-  // const [recipesPerPage, setRecipesPerPage] = useState(9);
   const recipesPerPage = 9;
   const end = page * recipesPerPage; //index of the last recipe
   const start = end - recipesPerPage; //index of the first recipe

@@ -1,5 +1,5 @@
 .pagination {
-  margin: 2rem;
+  margin: 2rem 0.25rem;
   padding: 0.25rem 0.5rem;
   border: none;
   border-radius: 0.4rem;
@@ -10,4 +10,5 @@
   );
   color: rgb(245, 207, 158);
   font-size: 18px;
+  cursor: pointer;
 }
