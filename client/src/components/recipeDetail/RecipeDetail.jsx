@@ -1,27 +1,18 @@
 import React, { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { getRecipeId, cleanDetail, deleteRecipe } from "../../redux/actions";
+import { useParams } from "react-router-dom";
+import { getRecipeId, cleanDetail } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from "../navBar/NavBar";
 import s from "./RecipeDetail.module.css";
 
 export default function RecipeDetail() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {
-    createdByUser,
-    image,
-    name,
-    diet,
-    summary,
-    score,
-    healthScore,
-    instructions,
-  } = useSelector((state) => state.detail);
+  const { image, name, diet, summary, score, healthScore, instructions } =
+    useSelector((state) => state.detail);
 
   useEffect(() => {
-    console.log(id);
+    // console.log(id);
     dispatch(getRecipeId(id));
     return () => {
       dispatch(cleanDetail());

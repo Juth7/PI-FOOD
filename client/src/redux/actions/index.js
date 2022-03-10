@@ -4,7 +4,7 @@ export const getRecipes = () => {
   return async (dispatch) => {
     try {
       const json = await axios.get("http://localhost:3001/recipes");
-      console.log("act", json.data);
+      // console.log("act", json.data);
       return dispatch({
         type: "GET_RECIPES",
         payload: json.data,
@@ -34,11 +34,11 @@ export const getRecipeName = (name) => {
 };
 
 export const getRecipeId = (id) => {
-  console.log("detailss", id);
+  // console.log("detailss", id);
   return async (dispatch) => {
     try {
       const json = await axios.get(`http://localhost:3001/recipes/${id}`);
-      console.log("detail", json.data);
+      // console.log("detail", json.data);
       return dispatch({
         type: "GET_DETAILS",
         payload: json.data,

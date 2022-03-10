@@ -23,6 +23,7 @@ const apiRecipes = async () => {
         diet: r.diets,
         score: r.spoonacularScore,
         summary: r.summary,
+        time: r.readyInMinutes,
       };
     });
     // console.log("recipe", recipe);
