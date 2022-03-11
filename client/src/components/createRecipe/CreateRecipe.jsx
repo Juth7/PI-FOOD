@@ -54,6 +54,7 @@ export default function CreateRecipe() {
   };
 
   let validateName = /^[a-zA-Z\s]+$/;
+  let validateUrl = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/;
   const validate = (input) => {
     let errors = {};
     if (!input.name.length) {
@@ -61,6 +62,9 @@ export default function CreateRecipe() {
     }
     if (!validateName.test(input.name)) {
       errors.name = "Special characters or numbers are not allowed";
+    }
+    if (input.image && !validateUrl.test(input.image)) {
+      errors.image = "This is not a valid URL";
     }
     if (!input.summary.length) {
       errors.summary = "This field cannot be empty";
@@ -118,6 +122,7 @@ export default function CreateRecipe() {
             placeholder=" URL Image (Optional)..."
             className={s.input}
           />
+          {errors.image && <p className={s.errors}>{errors.image}</p>}
         </div>
         <div className={s.display}>
           <label htmlFor="name">Title: </label>
@@ -189,6 +194,7 @@ export default function CreateRecipe() {
         </div>
         <div className={s.checkbox}>
           <label>Diets: </label> <br />
+          <br />
           {diets.map((d) => (
             <label htmlFor={d.name} key={d.name}>
               <input
@@ -197,7 +203,7 @@ export default function CreateRecipe() {
                 value={d.name}
                 onChange={handleCheck}
               />
-              {d.name}
+              {d.name}{" "}
             </label>
           ))}
         </div>

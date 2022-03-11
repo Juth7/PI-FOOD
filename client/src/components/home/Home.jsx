@@ -99,7 +99,7 @@ export default function Home() {
         )}
         <div className={s.filters}>
           <button className={s.btnReload} onClick={handleClick}>
-            <img src={icon} alt="Reload" width="30px" />
+            <img src={icon} alt="Reload" width="27px" />
           </button>
           <div>
             <form onClick={handleSubmit}>

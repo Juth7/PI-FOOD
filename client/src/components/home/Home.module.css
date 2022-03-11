@@ -25,28 +25,29 @@ html body {
   flex-direction: column;
   justify-self: center;
   align-items: center;
-  background: url("../../img/table1.png") no-repeat center center;
-  background-size: contain;
-  width: 35rem;
-  height: 50rem;
+  background: url("../../img/table3.jpeg") no-repeat center center;
+  border-radius: 2rem;
+  background-size: cover;
+  width: 30rem;
+  height: 43rem;
 }
 .btnReload {
-  margin-top: 5rem;
-  margin-left: -25rem;
+  margin-top: 3rem;
+  margin-left: -23rem;
   width: fit-content;
-  border-radius: 0.75rem;
+  border-radius: 2rem;
   box-shadow: 0 0 0.5rem rgba(24, 22, 22, 0.678);
   background: linear-gradient(180deg, #c0b093 0%, rgba(196, 196, 196, 0) 100%);
-  padding: 0.3rem 0.4rem;
+  padding: 0.4rem 0.5rem 0.3rem 0.5rem;
   border: none;
   cursor: pointer;
 }
 .search {
-  background-color: rgba(224, 208, 193, 0.192);
-  border: 2px solid #553a17;
+  background-color: rgba(182, 162, 144, 0.192);
+  border: 2px solid #8d5a18;
   border-radius: 10px 0px 0px 10px;
   width: 16rem;
-  height: 2.5rem;
+  height: 2rem;
   margin: 5rem 0 2rem 0;
   color: rgb(248, 231, 209);
   font-size: 0.95rem;
@@ -59,14 +60,14 @@ html body {
 .btnSearch {
   background: linear-gradient(
     180deg,
-    rgb(216, 122, 46) 0%,
-    rgba(136, 50, 4, 0.973) 100%
+    rgba(253, 206, 144, 0.89) 0%,
+    rgb(184, 72, 8) 100%
   );
   border: none;
   border-radius: 0px 10px 10px 0px;
-  height: 2.9rem;
-  width: 5rem;
-  color: rgb(248, 224, 171);
+  height: 2.4rem;
+  width: 4rem;
+  color: rgb(245, 232, 201);
   cursor: pointer;
 }
 .select {
@@ -77,8 +78,8 @@ html body {
   height: 2.2rem;
   background: linear-gradient(
     180deg,
-    rgba(150, 82, 26, 0.83) 0%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(233, 139, 62, 0.83) 0%,
+    rgba(255, 255, 255, 0.082) 100%
   );
   border: 2px solid rgba(119, 89, 25, 0.6);
   filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.25));
@@ -97,7 +98,10 @@ html body {
   font-size: 15px;
   width: fit-content;
   padding: 0.8rem;
-  background: linear-gradient(rgb(192, 123, 58) 0%, rgb(165, 65, 7) 100%);
+  background: linear-gradient(
+    rgba(233, 153, 62, 0.486) 0%,
+    rgba(150, 43, 10, 0.76) 100%
+  );
   box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
   border: none;
