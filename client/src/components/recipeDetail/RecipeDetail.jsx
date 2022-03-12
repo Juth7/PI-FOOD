@@ -57,7 +57,7 @@ export default function RecipeDetail() {
         </div>
         <div className={s.instructions}>
           {instructions && (
-            <p>{instructions && instructions.replace(/<[^>]+>/g, "")}</p>
+            <p dangerouslySetInnerHTML={{ __html: `${instructions}` }} />
           )}
         </div>
       </div>
