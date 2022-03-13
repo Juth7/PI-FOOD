@@ -24,16 +24,15 @@ export default function Home() {
   const isLoading = useSelector((state) => state.isLoading);
   const [name, setName] = useState("");
   const [order, setOrder] = useState("");
+
+  // ------------ PAGINATION --------------
   const [page, setPage] = useState(1);
   const recipesPerPage = 9;
   const end = page * recipesPerPage; //index of the last recipe
   const start = end - recipesPerPage; //index of the first recipe
   const currentRecipes = recipes?.slice(start, end); //rango de recetas en que estamos
   // console.log("current", currentRecipes);
-
-  const pagination = (n) => {
-    setPage(n);
-  };
+  const totalPages = Math.ceil(recipes.length / recipesPerPage);
 
   useEffect(() => {
     dispatch(getRecipes());
@@ -140,9 +139,9 @@ export default function Home() {
       </div>
       <Pagination
         className={s.pagination}
-        recipesPerPage={recipesPerPage}
-        totalRecipes={recipes.length}
-        pagination={pagination}
+        page={page}
+        setPage={setPage}
+        totalPages={totalPages}
       />
     </div>
   );

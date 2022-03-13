@@ -1,25 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./Pagination.module.css";
 
-export default function Pagination({
-  recipesPerPage,
-  totalRecipes,
-  pagination,
-}) {
-  const pages = [];
+export default function Pagination({ page, setPage, totalPages }) {
+  const [input, setInput] = useState(1);
 
-  for (let i = 1; i <= Math.ceil(totalRecipes / recipesPerPage); i++) {
-    //math.ceil(totalpages)
-    pages.push(i);
-  }
+  const previous = () => {
+    setInput(parseInt(input) - 1);
+    setPage(parseInt(input) - 1);
+  };
+
+  const next = () => {
+    setInput(parseInt(input) + 1);
+    setPage(parseInt(input) + 1);
+  };
+
+  const enter = (e) => {
+    if (e.keyCode === 13) {
+      setPage(parseInt(e.target.value));
+      if (
+        Number(e.target.value < 1) ||
+        parseInt(e.target.value) > totalPages ||
+        isNaN(parseInt(e.target.value))
+      ) {
+        setPage(1);
+        setInput(1);
+      }
+    }
+  };
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
 
   return (
     <div>
-      {pages?.map((e) => (
-        <button className={s.pagination} key={e} onClick={() => pagination(e)}>
-          {e}
-        </button>
-      ))}
+      <button className={s.pagination} onClick={previous} disabled={page <= 1}>
+        Prev
+      </button>
+      <input
+        onChange={handleChange}
+        onKeyDown={enter}
+        name="page"
+        value={input}
+        maxLength={2}
+        autoComplete="off"
+        className={s.input}
+      />
+      <span className={s.span}> de {totalPages}</span>
+      <button
+        className={s.pagination}
+        onClick={next}
+        disabled={page >= totalPages}
+      >
+        Next
+      </button>
     </div>
   );
 }

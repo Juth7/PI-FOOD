@@ -9,6 +9,19 @@
     rgba(71, 35, 15, 0.71) 100%
   );
   color: rgb(245, 207, 158);
-  font-size: 18px;
+  font-size: 15px;
   cursor: pointer;
+}
+
+.input {
+  text-align: center;
+  width: 1rem;
+  height: 1.35rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(245, 222, 179, 0.295);
+  background-color: transparent;
+  color: antiquewhite;
+}
+.span {
+  color: antiquewhite;
 }
