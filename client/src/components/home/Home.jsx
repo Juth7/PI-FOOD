@@ -46,7 +46,7 @@ export default function Home() {
 
   const handleInput = (e) => {
     e.preventDefault();
-    setName(e.target.value);
+    setName(e.target.value.toLowerCase());
   };
 
   const handleSubmit = (e) => {

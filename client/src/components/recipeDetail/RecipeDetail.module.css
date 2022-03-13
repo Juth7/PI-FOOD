@@ -12,6 +12,7 @@
 .title {
   margin-top: 5rem;
   text-shadow: 0 0 0.3rem rgba(209, 156, 106, 0.842);
+  text-transform: capitalize;
 }
 .img {
   margin-top: 1.5rem;
