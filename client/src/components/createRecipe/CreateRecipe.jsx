@@ -129,7 +129,7 @@ export default function CreateRecipe() {
           <input
             type="text"
             name="name"
-            value={input.name.toLowerCase()}
+            value={input.name}
             autoComplete="off"
             onChange={handleChange}
             className={s.input}

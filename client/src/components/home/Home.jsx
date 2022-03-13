@@ -46,13 +46,13 @@ export default function Home() {
 
   const handleInput = (e) => {
     e.preventDefault();
-    setName(e.target.value.toLowerCase());
+    setName(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getRecipeName(name));
-    setName("");
+    setPage(1);
   };
 
   const filterTypes = (e) => {

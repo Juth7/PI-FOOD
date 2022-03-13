@@ -101,7 +101,7 @@ const dbName = async (name) => {
   // console.log("pato", name);
   try {
     const names = await Recipe.findAll({
-      where: { name: name },
+      where: { name: { [Op.iLike]: "%" + name + "%" } },
       include: {
         model: Diet,
         attributes: ["name"],
