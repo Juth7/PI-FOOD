@@ -80,3 +80,43 @@
   border-radius: 4rem;
   cursor: pointer;
 }
+
+.stats {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  /* Añado mis propios estilos */
+  width: 98%;
+  height: 0.55rem;
+  border-radius: 20px;
+  margin: 1rem;
+}
+
+.stats::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 25rem;
+  background-color: rgb(248, 144, 74);
+  margin: -0.2rem 0 0 -0.1rem;
+}
+
+.stats::-moz-range-thumb {
+  -moz-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 25rem;
+  background-color: rgb(248, 144, 74);
+  margin: -0.2rem 0 0 -0.1rem;
+}
+.stats::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background-color: rgba(226, 173, 124, 0.301);
+  height: 0.6rem;
+  border: 1px solid rgb(133, 99, 60);
+  border-radius: 3rem;
+}

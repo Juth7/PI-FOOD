@@ -21,8 +21,8 @@ export default function CreateRecipe() {
     image: "",
     summary: "",
     diets: [],
-    score: "",
-    healthScore: "",
+    score: 0,
+    healthScore: 0,
     instructions: "",
   });
 
@@ -97,8 +97,8 @@ export default function CreateRecipe() {
         image: "",
         summary: "",
         diets: [],
-        score: "",
-        healthScore: "",
+        score: 0,
+        healthScore: 0,
         instructions: "",
       });
       navigate("/home");
@@ -151,29 +151,31 @@ export default function CreateRecipe() {
         <div className={s.display}>
           <label htmlFor="score">Score: </label>
           <input
-            type="number"
+            type="range"
             min="1"
             max="100"
             name="score"
             value={input.score}
             autoComplete="off"
             onChange={handleChange}
-            className={s.input}
+            className={s.stats}
           />
+          <span>{input.score}</span>
           {errors.score && <p className={s.errors}>{errors.score}</p>}
         </div>
         <div className={s.display}>
           <label htmlFor="healthScore">Health Level: </label>
           <input
-            type="number"
+            type="range"
             min="1"
             max="100"
             name="healthScore"
             value={input.healthScore}
             autoComplete="off"
             onChange={handleChange}
-            className={s.input}
+            className={s.stats}
           />
+          <span>{input.healthScore}</span>
           {errors.healthScore && (
             <p className={s.errors}>{errors.healthScore}</p>
           )}
