@@ -63,6 +63,7 @@ html body {
     rgba(253, 206, 144, 0.89) 0%,
     rgb(184, 72, 8) 100%
   );
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.356);
   border: none;
   border-radius: 0px 10px 10px 0px;
   height: 2.4rem;
@@ -70,6 +71,11 @@ html body {
   color: rgb(245, 232, 201);
   cursor: pointer;
 }
+.btnSearch:hover {
+  transform: scale(1.03, 1.03);
+  box-shadow: 0 0 12px 1px #c0b09379;
+}
+
 .select {
   margin-top: 2rem;
   color: rgba(231, 227, 216, 0.747);

@@ -93,7 +93,12 @@ export default function Home() {
           </div>
         ) : (
           <div className={s.notFound}>
-            <img src={notFound} alt="Recipe Not Found" width="900px" />
+            <img
+              src={notFound}
+              alt="Recipe Not Found"
+              width="800px"
+              height="400px"
+            />
           </div>
         )}
         <div className={s.filters}>
