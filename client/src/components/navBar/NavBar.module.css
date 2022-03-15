@@ -25,7 +25,10 @@
 }
 .home {
   margin-right: 4rem;  
+  opacity: 0.55;
 }
 .home:hover {
   transform: scale(1.05, 1.05);
+  filter: drop-shadow(0 0 12px whitesmoke);
+  opacity: 0.7;
 }
