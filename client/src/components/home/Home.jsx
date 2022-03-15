@@ -23,7 +23,7 @@ export default function Home() {
   const diets = useSelector((state) => state.diets);
   const isLoading = useSelector((state) => state.isLoading);
   const [name, setName] = useState("");
-  const [order, setOrder] = useState("");
+  const [, setOrder] = useState("");
 
   // ------------ PAGINATION --------------
   const [page, setPage] = useState(1);
