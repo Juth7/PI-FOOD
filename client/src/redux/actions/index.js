@@ -3,7 +3,9 @@ import axios from "axios";
 export const getRecipes = () => {
   return async (dispatch) => {
     try {
-      const json = await axios.get("http://localhost:3001/recipes");
+      const json = await axios.get(
+        "https://food-app-juth.herokuapp.com/recipes"
+      );
       // console.log("act", json.data);
       return dispatch({
         type: "GET_RECIPES",
@@ -20,7 +22,7 @@ export const getRecipeName = (name) => {
   return async (dispatch) => {
     try {
       const json = await axios.get(
-        `http://localhost:3001/recipes?name=${name}`
+        `https://food-app-juth.herokuapp.com/recipes?name=${name}`
       );
 
       return dispatch({
@@ -37,7 +39,9 @@ export const getRecipeId = (id) => {
   // console.log("detailss", id);
   return async (dispatch) => {
     try {
-      const json = await axios.get(`http://localhost:3001/recipes/${id}`);
+      const json = await axios.get(
+        `https://food-app-juth.herokuapp.com/recipes/${id}`
+      );
       // console.log("detail", json.data);
       return dispatch({
         type: "GET_DETAILS",
@@ -52,7 +56,7 @@ export const getRecipeId = (id) => {
 export const getDietTypes = () => {
   return async (dispatch) => {
     try {
-      const json = await axios.get("http://localhost:3001/types");
+      const json = await axios.get("https://food-app-juth.herokuapp.com/types");
       return dispatch({
         type: "GET_DIET_TYPES",
         payload: json.data,
@@ -67,7 +71,7 @@ export const createRecipe = (payload) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/recipe",
+        "https://food-app-juth.herokuapp.com/recipe",
         payload
       );
       return dispatch({ type: "POST_RECIPE", payload: response });
