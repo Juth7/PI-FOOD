@@ -26,6 +26,7 @@
 .home {
   margin-right: 4rem;  
   opacity: 200%;
+  filter: drop-shadow(0 0 12px whitesmoke);
 }
 .home:hover {
   filter: drop-shadow(0 0 12px whitesmoke);
