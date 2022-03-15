@@ -27,6 +27,5 @@
   margin-right: 4rem;  
 }
 .home:hover {
-  filter: drop-shadow(0 0 12px whitesmoke);
   transform: scale(1.05, 1.05);
 }
