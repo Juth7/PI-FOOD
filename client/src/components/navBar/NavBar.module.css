@@ -24,11 +24,9 @@
   /* box-shadow: 0px 0px 8px 12px rgba(255, 250, 250, 0.55); */
 }
 .home {
-  margin-right: 4rem;
-  opacity: 55%;
+  margin-right: 4rem;  
 }
 .home:hover {
   filter: drop-shadow(0 0 12px whitesmoke);
   transform: scale(1.05, 1.05);
-  opacity: 70%;
 }
